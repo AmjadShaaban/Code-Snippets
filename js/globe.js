@@ -17,7 +17,7 @@ $(document).ready(function() {
       '<img class="globe-span" src="[SRC]" width="[WIDTH]" height="[HEIGHT]" style="border:0;padding:0;margin:0;position:relative;width:[WIDTH]px;height:[HEIGHT]px;top:[TOP]px;">';
 
     function render_template(template, td) {
-      return template.replace(/\[(.*?)\]/g, function(m, n) {
+      return template.replace(/\[(.*?)\]/g, function(_m, n) {
         return td[n];
       });
     }
@@ -29,13 +29,10 @@ $(document).ready(function() {
     var h = $globe_image.height();
 
     var r = size / 2;
-    var max_c = Math.PI * size;
     scales = [];
     for (var y = -r; y < r; y++) {
       var i = (y + r) / size;
       var width = Math.sqrt(r * r - y * y) * 2.0 + 0.5;
-
-      var c = Math.PI * width;
 
       var scale = width / size;
 
@@ -68,8 +65,7 @@ $(document).ready(function() {
 
     setInterval(() => {
       animate_globe("#jsglobe");
-      console.log("Logging Something!");
-    }, 50);
+    }, 75);
   }
 
   $(function() {
