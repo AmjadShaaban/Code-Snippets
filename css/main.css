@@ -1,0 +1,48 @@
+.h {
+  grid-area: h;
+  background-color: aquamarine;
+  height: 3rem;
+}
+.md {
+  grid-area: m;
+  background-color: blue;
+  height: 18rem;
+}
+.f {
+  grid-area: f;
+  background-color: red;
+  height: 3rem;
+}
+.t-r {
+  grid-area: t-r;
+  background-color: darkcyan;
+}
+.b-r {
+  grid-area: b-r;
+  background-color: blueviolet;
+}
+.t-l {
+  grid-area: t-l;
+  background-color: yellow;
+}
+.b-l {
+  grid-area: b-l;
+  background-color: thistle;
+}
+#moveme {
+  background-color: black;
+  color: beige;
+  border: 10px double red;
+}
+.container {
+  display: grid;
+  grid-template-columns: 4;
+  grid-template-rows: 4;
+  grid-template-areas:
+    "h h h h"
+    "t-l m m t-r"
+    "t-l m m t-r"
+    "b-l m m b-r"
+    "b-l m m b-r"
+    "f f f f";
+}

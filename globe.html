@@ -5,19 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/requestanimationframe.polyfill.js"></script>
+    <script type="text/javascript" src="./js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./js/sphere-hacked.js"></script>
+    <script type="text/javascript" src="./js/jquery.earth-3d.js"></script>
+    <script type="text/javascript" src="./js/globe.js"></script>
   </head>
   <body>
-    <img id="jsglobe-image" style="display:none;" src="./images/earthmap.jpg" />
-    <div
-      style="margin-left:80px;width:100%;padding:20px;float:left;width:300px;height:300px;"
-    >
-      <div id="jsglobe" style="float:left;position:absolute;"></div>
-      <div
-        style="float:left;width:300px;height:300px;position:absolute;background-image:url(./images/spherelight.png);"
-      ></div>
-    </div>
-    <div style="clear:both;">&nbsp;</div>
-    <script src="./js/globe.js"></script>
+    <div id="showoff">
+      <div id="container">
+        <canvas id="sphere" width="400" height="400"></canvas>
+        <div id="glow-shadows" class="earth"></div>
+        <canvas id="flights" width="400" height="400"></canvas>
+        <div id="locations"></div>
+      </div>
+      <div class="choose_example">
+        Choose example: <select id="example">
+          <option value="simple">Simple earth</option>
+          <option value="simple_tilted">Simple tilted earth</option>
+          <option value="simple_mars">Simple mars</option>
+          <option value="locations">Earth with locations</option>
+          <option value="flights" selected>Earth with locations and flights</option>
+        </select>
+      </div>
   </body>
 </html>
