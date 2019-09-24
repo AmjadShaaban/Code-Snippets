@@ -13,18 +13,19 @@ $(document).ready(function() {
 
   var messageField = $("#messageInput"),
     nameField = $("#nameInput"),
-    messageList = $("#messages");
+    messageList = $("#messages"),
+    onlineList = $("#online-users");
 
   messageField.on("keypress", function(e) {
     if (e.keyCode === 13) {
       var username = nameField.val();
       var message = messageField.val();
 
-      database.ref().push({ name: username, text: message });
+      database.ref("/chat").push({ name: username, text: message });
       messageField.val("");
     }
   });
-  database.ref().on("child_added", function(snapshot) {
+  database.ref("/chat").on("child_added", function(snapshot) {
     var data = snapshot.val();
     var username = data.name || "anonymous";
     var message = data.text;
@@ -40,5 +41,19 @@ $(document).ready(function() {
 
       messageList[0].scrollTop = messageList[0].scrollHeight;
     }
+  });
+  var listRef = database.ref("/presence");
+  var userRef = listRef.push();
+
+  var presenceRef = database.ref("/.info/connected");
+  presenceRef.on("value", function(snap) {
+    if (snap.val()) {
+      userRef.set(true);
+      userRef.onDisconnect().remove();
+    }
+  });
+
+  listRef.on("value", function(snap) {
+    onlineList.text(snap.numChildren());
   });
 });
