@@ -1,4 +1,34 @@
 $(document).ready(function() {
+  var nameBox = $("<input>").attr({
+      type: "text",
+      id: "nameInput",
+      class: "form-control",
+      placeholder: "enter a username"
+    }),
+    chatBox = $("<ul>").attr({
+      id: "messages",
+      class: "chat-messages"
+    }),
+    msgBox = $("<input>").attr({
+      type: "text",
+      id: "messageInput",
+      class: "form-control",
+      placeholder: "type a message ... press [ENTER] to send"
+    }),
+    usersOnline = $("<div>")
+      .attr("class", "online-users")
+      .text("Online users: "),
+    spanIcon = $("<span>").attr({
+      class: "glyphicon glyphicon-user",
+      id: "online-users"
+    });
+
+  nameBox.appendTo(".chatbox"),
+    chatBox.appendTo(".chatbox"),
+    msgBox.appendTo(".chatbox"),
+    usersOnline.appendTo(".chatbox"),
+    spanIcon.appendTo(usersOnline);
+
   var firebaseConfig = {
     apiKey: "AIzaSyCszCiGMtbfQW3xaAstweYKbib82r0WZF0",
     authDomain: "simple-chat-app-5aaa9.firebaseapp.com",

@@ -3,7 +3,8 @@ body {
   background-size: 100%;
 }
 
-.chat-app {
+.chatbox {
+  overflow: auto;
   height: 500px;
   width: 600px;
   background-color: rgba(243, 243, 243, 0.5);
@@ -43,4 +44,9 @@ body {
 
 .form-control {
   background-color: #f3f3f3 !important;
+}
+
+#messageInput {
+  position: relative;
+  bottom: 0;
 }
