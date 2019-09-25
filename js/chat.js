@@ -84,6 +84,6 @@ $(document).ready(function() {
   });
 
   listRef.on("value", function(snap) {
-    onlineList.text(snap.numChildren());
+    onlineList.text("[" + snap.numChildren() + "].");
   });
 });

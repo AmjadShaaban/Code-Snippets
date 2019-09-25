@@ -1,3 +1,7 @@
+body {
+  color: white;
+  background-color: black;
+}
 .h {
   grid-area: h;
   background-color: aquamarine;
@@ -29,20 +33,29 @@
   grid-area: b-l;
   background-color: thistle;
 }
+.c {
+  grid-area: c;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
 #moveme {
+  width: 80%;
+  margin: auto;
   background-color: black;
   color: beige;
   border: 10px double red;
 }
 .container {
+  color: black;
   display: grid;
-  grid-template-columns: 4;
-  grid-template-rows: 4;
+  grid-template-columns: 5;
+  grid-template-rows: 7;
   grid-template-areas:
-    "h h h h"
-    "t-l m m t-r"
-    "t-l m m t-r"
-    "b-l m m b-r"
-    "b-l m m b-r"
-    "f f f f";
+    "h h h h h"
+    "t-l m m m t-r"
+    "t-l m m m t-r"
+    "b-l m m m b-r"
+    "b-l m m m b-r"
+    "f f f f f"
+    "c c c c c";
 }

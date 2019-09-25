@@ -1,16 +1,22 @@
 body {
-  background-color: cadetblue;
+  background-color: black;
+  color: white;
   background-size: 100%;
 }
-
+h1,
+h3 {
+  text-align: center;
+}
 .chatbox {
   overflow: auto;
   height: 500px;
   width: 600px;
-  background-color: rgba(243, 243, 243, 0.5);
+  background-color: cornsilk;
+  color: black;
   border-radius: 25px;
   padding: 20px;
   padding-top: 30px;
+  margin: auto;
 }
 
 .name {
@@ -18,7 +24,7 @@ body {
   font-family: "Poiret One", cursive;
 }
 
-.chat-app ul {
+ul {
   list-style: none;
   margin: 0px;
   padding: 10px;
@@ -26,26 +32,21 @@ body {
   height: 300px;
 }
 
-.main {
-  background-color: rgba(243, 243, 243, 0.5);
-  padding: 20px;
-}
-
-.message-text {
-  bottom: 0px;
-  margin-top: 25px;
-  font-family: "Poiret One", cursive;
-}
-
 .glyphicon-user {
-  font-size: 24px;
-  color: #111;
+  font-size: 1.75rem;
 }
 
 .form-control {
-  background-color: #f3f3f3 !important;
+  background-color: wheat !important;
+  border: 0.08rem double black;
+  margin-bottom: 1.5%;
+  margin-top: 1.5%;
+  color: black;
 }
 
+.online-users {
+  color: tomato;
+}
 #messageInput {
   position: relative;
   bottom: 0;
